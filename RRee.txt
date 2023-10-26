@@ -1,0 +1,27 @@
+import matplotlib.pyplot as plt
+import numpy as np
+import seaborn as sns
+import pandas as pd
+import sys
+
+!wget -----------------------
+
+df = pd.read_csv("METABRIC_RNA_Mutation.csv",low_memory=False)
+df.head(10)
+
+  for column in df:
+  dominio =df[column].unique()
+  print(f"El dominio es {column}:{dominio}")
+
+
+print(df.dtypes)
+
+sns.countplot(data=df, x='cellularity')
+plt.title("Graph")
+plt.xlabel("Cellularity")
+plt.xlabel("Frec")
+plt.ylabel("Rango")
+plt.show()
+
+df['cellularity'].value_counts().plot.bar()
+plt.show()
